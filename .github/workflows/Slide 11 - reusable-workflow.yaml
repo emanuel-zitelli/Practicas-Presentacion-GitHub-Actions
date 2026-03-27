@@ -7,10 +7,10 @@ on:
         type: string
         default: "Ali"
         required: false
-    secrets:
-      access-token:
-        description: "Secret description"
-        required: true
+    #secrets:
+     # access-token:
+      #  description: "Secret description"
+        #required: true
 
 jobs:
   checkout:
