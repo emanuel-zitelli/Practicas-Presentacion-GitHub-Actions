@@ -1,0 +1,10 @@
+name: Enviar Repositorio al Runner
+on: [push]
+
+jobs:
+  checkout-action:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v6
+      - name: Mostrar los archivos traídos
+        run: ls -la $GITHUB_WORKSPACE
