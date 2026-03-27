@@ -17,6 +17,6 @@ jobs:
       - name: Log Vars
         run: |
           echo '${{ vars.JOBS_RUNNER }}'
-          echo "ENV_LEVEL_VAR: ${{ vars.ENV_LEVEL_VAR }}
-          echo "ENV_LEVEL_VAR2: ${{ vars.ENV_LEVEL_VAR2 }}
-          echo "ENV_LEVEL_VAR3: ${{ vars.ENV_LEVEL_VAR3 }}
+          echo "ENV_LEVEL_VAR: '${{ vars.ENV_LEVEL_VAR }}'
+          echo "ENV_LEVEL_VAR2: '${{ vars.ENV_LEVEL_VAR2 }}'
+          echo "ENV_LEVEL_VAR3: '${{ vars.ENV_LEVEL_VAR3 }}'
