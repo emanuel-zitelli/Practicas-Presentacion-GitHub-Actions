@@ -1,14 +1,15 @@
-name: Variables and Secrets
+name: Variables and Secrets for Repositories
 on: [push]
 
 jobs:
   log-vars:
     runs-on: ${{ vars.JOBS_RUNNER }}
+    environment: env-prod
     env:
       BOOLEAN_SECRET: ${{ secrets.BOOLEAN_SECRET }}
       ENV_LEVEL_VAR: ${{ vars.ENV_LEVEL_VAR }}
-      REPO_LEVEL_VAR: ${{ vars.ENV_LEVEL_VAR2 }}
-      ORG_LEVEL_VAR: ${{ vars.ENV_LEVEL_VAR3 }}
+      ENV_LEVEL_VAR2: ${{ vars.ENV_LEVEL_VAR2 }}
+      ENV_LEVEL_VAR3: ${{ vars.ENV_LEVEL_VAR3 }}
     steps:
       - name: Run only if BOOLEAN_SECRET is true
         if: env.BOOLEAN_SECRET == 'true'
@@ -16,6 +17,6 @@ jobs:
       - name: Log Vars
         run: |
           echo '${{ vars.JOBS_RUNNER }}'
-          echo "ORG_LEVEL_VAR: $ENV_LEVEL_VAR"
-          echo "REPO_LEVEL_VAR: $ENV_LEVEL_VAR2"
-          echo "ENV_LEVEL_VAR: $ENV_LEVEL_VAR3"
+          echo "ENV_LEVEL_VAR: $ENV_LEVEL_VAR"
+          echo "ENV_LEVEL_VAR2: $ENV_LEVEL_VAR2"
+          echo "ENV_LEVEL_VAR3: $ENV_LEVEL_VAR3"
